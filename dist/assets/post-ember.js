@@ -11,8 +11,10 @@ define('post-ember/adapters/post', ['exports', 'ember-data'], function (exports,
     pathForType: function pathForType() {
       return '';
     },
-
-    host: 'http://api.myjson.com/bins'
+    host: 'http://api.myjson.com/bins',
+    shouldBackgroundReloadRecord: function shouldBackgroundReloadRecord() {
+      return true;
+    }
   });
 
 });
@@ -55,7 +57,8 @@ define('post-ember/initializers/export-application-global', ['exports', 'ember',
 
   exports.initialize = initialize;
 
-  function initialize(container, application) {
+  function initialize() {
+    var application = arguments[1] || arguments[0];
     if (config['default'].exportApplicationGlobal !== false) {
       var value = config['default'].exportApplicationGlobal;
       var globalName;
@@ -189,7 +192,7 @@ define('post-ember/templates/application', ['exports'], function (exports) {
   exports['default'] = Ember.HTMLBars.template((function() {
     return {
       meta: {
-        "revision": "Ember@1.13.6",
+        "revision": "Ember@1.13.8",
         "loc": {
           "source": null,
           "start": {
@@ -241,7 +244,7 @@ define('post-ember/templates/post', ['exports'], function (exports) {
   exports['default'] = Ember.HTMLBars.template((function() {
     return {
       meta: {
-        "revision": "Ember@1.13.6",
+        "revision": "Ember@1.13.8",
         "loc": {
           "source": null,
           "start": {
@@ -307,7 +310,7 @@ define('post-ember/tests/adapters/post.jshint', function () {
 
   module('JSHint - adapters');
   test('adapters/post.js should pass jshint', function() { 
-    ok(true, 'adapters/post.js should pass jshint.'); 
+    ok(false, 'adapters/post.js should pass jshint.\nadapters/post.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nadapters/post.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -317,7 +320,7 @@ define('post-ember/tests/app.jshint', function () {
 
   module('JSHint - .');
   test('app.js should pass jshint', function() { 
-    ok(true, 'app.js should pass jshint.'); 
+    ok(false, 'app.js should pass jshint.\napp.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 3, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 4, col 1, \'import\' is only available in ES6 (use esnext option).\napp.js: line 18, col 1, \'export\' is only available in ES6 (use esnext option).\n\n5 errors'); 
   });
 
 });
@@ -384,7 +387,7 @@ define('post-ember/tests/models/post.jshint', function () {
 
   module('JSHint - models');
   test('models/post.js should pass jshint', function() { 
-    ok(true, 'models/post.js should pass jshint.'); 
+    ok(false, 'models/post.js should pass jshint.\nmodels/post.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/post.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -394,7 +397,7 @@ define('post-ember/tests/router.jshint', function () {
 
   module('JSHint - .');
   test('router.js should pass jshint', function() { 
-    ok(true, 'router.js should pass jshint.'); 
+    ok(false, 'router.js should pass jshint.\nrouter.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 12, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors'); 
   });
 
 });
@@ -404,7 +407,7 @@ define('post-ember/tests/routes/post.jshint', function () {
 
   module('JSHint - routes');
   test('routes/post.js should pass jshint', function() { 
-    ok(false, 'routes/post.js should pass jshint.\nroutes/post.js: line 7, col 6, Missing semicolon.\nroutes/post.js: line 10, col 35, Missing semicolon.\nroutes/post.js: line 11, col 28, Missing semicolon.\nroutes/post.js: line 17, col 41, Missing semicolon.\nroutes/post.js: line 14, col 37, \'Em\' is not defined.\n\n5 errors'); 
+    ok(false, 'routes/post.js should pass jshint.\nroutes/post.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nroutes/post.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\nroutes/post.js: line 7, col 6, Missing semicolon.\n\n3 errors'); 
   });
 
 });
@@ -414,7 +417,7 @@ define('post-ember/tests/serializers/post.jshint', function () {
 
   module('JSHint - serializers');
   test('serializers/post.js should pass jshint', function() { 
-    ok(false, 'serializers/post.js should pass jshint.\nserializers/post.js: line 4, col 57, \'payload\' is defined but never used.\nserializers/post.js: line 4, col 38, \'primaryModelClass\' is defined but never used.\nserializers/post.js: line 4, col 31, \'store\' is defined but never used.\n\n3 errors'); 
+    ok(false, 'serializers/post.js should pass jshint.\nserializers/post.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nserializers/post.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors'); 
   });
 
 });
@@ -595,7 +598,7 @@ catch(err) {
 if (runningTests) {
   require("post-ember/tests/test-helper");
 } else {
-  require("post-ember/app")["default"].create({"LOG_TRANSITIONS":true,"name":"post-ember","version":"0.0.0+41da8361"});
+  require("post-ember/app")["default"].create({"LOG_TRANSITIONS":true,"name":"post-ember","version":"0.0.0+"});
 }
 
 /* jshint ignore:end */
