@@ -1,0 +1,4 @@
+module('JSHint - adapters');
+test('adapters/post.js should pass jshint', function() { 
+  ok(true, 'adapters/post.js should pass jshint.'); 
+});

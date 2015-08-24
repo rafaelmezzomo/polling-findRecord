@@ -1,0 +1,1 @@
+/Users/rafaelmezzomo/Documents/startae/post_ember/tmp/jshinter-tmp_cache_dir-JxXJnQWS.tmp/1

@@ -1,0 +1,1 @@
+/Users/rafaelmezzomo/Documents/startae/post_ember/tmp/funnel-output_path-lR18j6XP.tmp/ember-qunit-notifications/README.md

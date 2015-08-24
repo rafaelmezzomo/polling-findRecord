@@ -1,0 +1,1 @@
+/Users/rafaelmezzomo/Documents/startae/post_ember/tmp/babel-cache_path-OQ2450JF.tmp/post-ember/adapters/post.js

@@ -1,0 +1,4 @@
+module('JSHint - unit/serializers');
+test('unit/serializers/post-test.js should pass jshint', function() { 
+  ok(true, 'unit/serializers/post-test.js should pass jshint.'); 
+});

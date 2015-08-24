@@ -1,0 +1,1 @@
+/Users/rafaelmezzomo/Documents/startae/post_ember/tmp/babel-cache_path-jsvFaquF.tmp/post-ember/tests/unit/adapters/application-test.js

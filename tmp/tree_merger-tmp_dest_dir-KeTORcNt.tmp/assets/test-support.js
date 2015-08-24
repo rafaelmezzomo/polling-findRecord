@@ -1,0 +1,1 @@
+/Users/rafaelmezzomo/Documents/startae/post_ember/tmp/core_object-output_path-rjYkJgGP.tmp/assets/test-support.js

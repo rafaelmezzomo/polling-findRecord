@@ -1,0 +1,1 @@
+/Users/rafaelmezzomo/Documents/startae/post_ember/tmp/funnel-output_path-BI7NR83i.tmp/ember-cli-content-security-policy.js
