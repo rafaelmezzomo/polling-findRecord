@@ -12,6 +12,7 @@ define('post-ember/adapters/post', ['exports', 'ember-data'], function (exports,
       return '';
     },
     host: 'http://api.myjson.com/bins',
+    // In ember 2.0 shouldBackgroundReloadRecord will return true automatically.
     shouldBackgroundReloadRecord: function shouldBackgroundReloadRecord() {
       return true;
     }
